@@ -1,11 +1,10 @@
-# run.ps1 - One-command launcher for the custom QR landing page
+# run.ps1 - Generate the QR code
 # Usage: .\run.ps1
 
 Write-Host ""
-Write-Host "=== Custom QR Code Launcher ===" -ForegroundColor Cyan
+Write-Host "=== Boris QR Code Generator ===" -ForegroundColor Cyan
 Write-Host ""
 
-# 1. Install / update dependencies
 Write-Host "[1/2] Installing dependencies..." -ForegroundColor Yellow
 pip install -r requirements.txt --quiet
 
@@ -17,12 +16,8 @@ if ($LASTEXITCODE -ne 0) {
 Write-Host "      Dependencies ready." -ForegroundColor Green
 Write-Host ""
 
-# 2. Start the app (Flask + ngrok + QR generation)
-Write-Host "[2/2] Starting server and generating QR..." -ForegroundColor Yellow
-Write-Host "      Local preview : http://localhost:5000" -ForegroundColor Gray
-Write-Host "      QR image will be saved to output/boris_qr.png" -ForegroundColor Gray
-Write-Host ""
-Write-Host "Press Ctrl+C to stop." -ForegroundColor DarkGray
-Write-Host ""
-
+Write-Host "[2/2] Generating QR code..." -ForegroundColor Yellow
 python main.py
+
+Write-Host ""
+Write-Host "Done! Your QR code is in output/boris_qr.png" -ForegroundColor Green

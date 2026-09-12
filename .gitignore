@@ -28,3 +28,8 @@ output/*.jpg
 # OS
 .DS_Store
 Thumbs.db
+
+# Agents & Skills
+.agents/
+.gemini/
+
